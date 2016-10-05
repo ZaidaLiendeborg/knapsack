@@ -37,7 +37,6 @@ knapsack_dynamic<- function(x, W){
   i <- i + 1
   
   while(i > 1 ){
-    
     if( m[i-1,j] < m[i,j] ){
       
       best_items <- c(best_items, i-1)
@@ -56,5 +55,3 @@ knapsack_dynamic<- function(x, W){
   
   return(ls)
 }
-
-knapsack_dynamic(knapsack_objects[1:8,], W=3500)
