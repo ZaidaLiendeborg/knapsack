@@ -15,12 +15,14 @@ knapsack_dynamic(x, W)
 A list of the maximated value with corresponding elements that fits in the bag.
 }
 \description{
-The function solves the knapsack problem , \url{https://en.wikipedia.org/wiki/Knapsack_problem}
-using dynamtic programming. The function iterates over all possible values of W.
+The function solves the knapsack problem using dynamic programming. The function iterates over all possible values of W. It returns the same value as \code{brute_force_knapsack}.
 }
 \examples{
 n<- 2000
 knapsack_objects <-data.frame(w=sample(1:4000, size = n, replace = TRUE),v=runif(n = n, 0, 10000))
 knapsack_dynamic(x=knapsack_objects[1:8,], W=2000)
+}
+\references{
+\url{https://en.wikipedia.org/wiki/Knapsack_problem#0.2F1_knapsack_problem}
 }
 

@@ -15,12 +15,14 @@ brute_force_knapsack(x, W)
 A list of the maximated value with corresponding elements that fits in the bag.
 }
 \description{
-The function solves the knapsack problem , \url{https://en.wikipedia.org/wiki/Knapsack_problem}
-using brute force search.
+The function solves the knapsack problem using brute force search. It solves the knapsack problem by going through all the possible combinations of the items, and then find the maximum value.
 }
 \examples{
 n<- 2000
 knapsack_objects <-data.frame(w=sample(1:4000, size = n, replace = TRUE),v=runif(n = n, 0, 10000))
 brute_force_knapsack(x=knapsack_objects[1:8,], W=2000)
+}
+\references{
+\url{https://en.wikipedia.org/wiki/Knapsack_problem}
 }
 
