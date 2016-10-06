@@ -1,14 +1,18 @@
 Package: knapsack
 Type: Package
-Title: The package contains three different functions to solve the knapsack problem
+Title: The package contains three different functions to solve the knapsack
+    problem
 Version: 1.0
 Date: 2016-10-04
 Author: Zaida Liendeborg, Emma Wallentinsson
 Maintainer: Zaida Liendeborg <zaili511@student.liu.se>
-Description: The three functions in the package that solves the knapsack problem involves 
-    a brute force funtion, a dynamic function and a greedy heuristic function 
+Description: The three functions in the package that solves the knapsack problem
+    involves a brute force funtion, a dynamic function and a greedy heuristic
+    function
 License: Adv R programming
-Suggests: knitr,
+Suggests:
+    knitr,
     rmarkdown,
     testthat
 VignetteBuilder: knitr
+RoxygenNote: 5.0.1
