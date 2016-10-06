@@ -1,5 +1,9 @@
 
 greedy_knapsack<- function(x, W){
+  stopifnot(all(x >= 0))
+  stopifnot(class(x)=="data.frame") 
+  stopifnot(W >= 0)
+  
   weight<- x[,1]
   value<- x[,2]
   r<- value/weight
