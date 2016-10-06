@@ -89,10 +89,10 @@ knapsack_objects &lt;-<span class="kw">data.frame</span>(<span class="dt">w=</sp
 ## 
 ## $elements
 ## [1] 5 8</code></pre>
-<p>If we run the function with 16 objects, the time is 0.65 seconds.</p>
+<p>If we run the function with 16 objects, the time is 0.64 seconds.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">brute_force_knapsack</span>(<span class="dt">x=</span>knapsack_objects[<span class="dv">1</span>:<span class="dv">16</span>,], <span class="dt">W=</span><span class="dv">3500</span>))</code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.67    0.04    0.73</code></pre>
+##    0.65    0.02    0.66</code></pre>
 </div>
 <div id="dynammic-programming" class="section level2">
 <h2>Dynammic programming</h2>
@@ -120,10 +120,10 @@ knapsack_objects &lt;-<span class="kw">data.frame</span>(<span class="dt">w=</sp
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n&lt;-<span class="dv">1000000</span>
 knapsack_objects_big &lt;-<span class="kw">data.frame</span>(<span class="dt">w=</span><span class="kw">sample</span>(<span class="dv">1</span>:<span class="dv">4000</span>, <span class="dt">size =</span> n, <span class="dt">replace =</span> <span class="ot">TRUE</span>),
 <span class="dt">v=</span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dv">0</span>, <span class="dv">10000</span>))</code></pre></div>
-<p>The time it takes to run the function is about 1.6 seconds.</p>
+<p>The time it takes to run the function is 1.6 seconds.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">greedy_knapsack</span>(<span class="dt">x=</span>knapsack_objects_big[<span class="dv">1</span>:<span class="dv">1000000</span>,], <span class="dt">W=</span><span class="dv">3500</span>))</code></pre></div>
 <pre><code>##    user  system elapsed 
-##    1.64    0.03    1.67</code></pre>
+##    1.51    0.03    1.55</code></pre>
 </div>
 
 
