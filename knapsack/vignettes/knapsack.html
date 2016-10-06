@@ -92,7 +92,7 @@ knapsack_objects &lt;-<span class="kw">data.frame</span>(<span class="dt">w=</sp
 <p>If we run the function with 16 objects, the time is 0.64 seconds.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">brute_force_knapsack</span>(<span class="dt">x=</span>knapsack_objects[<span class="dv">1</span>:<span class="dv">16</span>,], <span class="dt">W=</span><span class="dv">3500</span>))</code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.65    0.02    0.66</code></pre>
+##   0.808   0.064   0.996</code></pre>
 </div>
 <div id="dynammic-programming" class="section level2">
 <h2>Dynammic programming</h2>
@@ -123,7 +123,7 @@ knapsack_objects_big &lt;-<span class="kw">data.frame</span>(<span class="dt">w=
 <p>The time it takes to run the function is 1.6 seconds.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">greedy_knapsack</span>(<span class="dt">x=</span>knapsack_objects_big[<span class="dv">1</span>:<span class="dv">1000000</span>,], <span class="dt">W=</span><span class="dv">3500</span>))</code></pre></div>
 <pre><code>##    user  system elapsed 
-##    1.51    0.03    1.55</code></pre>
+##   1.590   0.054   1.755</code></pre>
 </div>
 
 

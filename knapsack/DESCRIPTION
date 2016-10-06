@@ -10,6 +10,8 @@ Description: The three functions in the package that solves the knapsack problem
     involves a brute force funtion, a dynamic function and a greedy heuristic
     function
 License: Adv R programming
+Imports: 
+    stats
 Suggests:
     knitr,
     rmarkdown,

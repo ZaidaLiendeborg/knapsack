@@ -4,10 +4,12 @@
 #' using brute force search.
 #' @param x an data frame with a number of items.
 #' @param W the limited weight the knapsack can handle.
+#' @import stats
 #' @return A list of the maximated value with corresponding elements that fits in the bag.
 #' @examples
+#' n<- 2000
 #' knapsack_objects <-data.frame(w=sample(1:4000, size = n, replace = TRUE),v=runif(n = n, 0, 10000))
-#' brute_force_knapsack(x=knapsack_objects[1:500,] W=2000)
+#' brute_force_knapsack(x=knapsack_objects[1:8,], W=2000)
 #' @export
 
 brute_force_knapsack <- function(x, W){

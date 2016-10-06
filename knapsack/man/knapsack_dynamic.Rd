@@ -19,7 +19,8 @@ The function solves the knapsack problem , \url{https://en.wikipedia.org/wiki/Kn
 using dynamtic programming. The function iterates over all possible values of W.
 }
 \examples{
+n<- 2000
 knapsack_objects <-data.frame(w=sample(1:4000, size = n, replace = TRUE),v=runif(n = n, 0, 10000))
-knapsack_dynamic(x=knapsack_objects[1:500,] W=2000)
+knapsack_dynamic(x=knapsack_objects[1:8,], W=2000)
 }
 
