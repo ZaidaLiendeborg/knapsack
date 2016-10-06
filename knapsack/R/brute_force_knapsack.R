@@ -1,3 +1,15 @@
+#' Solving the knapsack problem using brute force
+#' 
+#' The function solves the knapsack problem , \url{https://en.wikipedia.org/wiki/Knapsack_problem}
+#' using brute force search.
+#' @param x an data frame with a number of items.
+#' @param W the limited weight the knapsack can handle.
+#' @return A list of the maximated value with corresponding elements that fits in the bag.
+#' @examples
+#' knapsack_objects <-data.frame(w=sample(1:4000, size = n, replace = TRUE),v=runif(n = n, 0, 10000))
+#' brute_force_knapsack(x=knapsack_objects[1:500,] W=2000)
+#' @export
+
 brute_force_knapsack <- function(x, W){
   
   # Stop function if elements in x are not more than zero
@@ -7,7 +19,7 @@ brute_force_knapsack <- function(x, W){
   stopifnot(class(x)=="data.frame") 
   
   # Stop function if W is less than or equal to zero
-  stopifnot(W >= 0)
+  stopifnot(W > 0)
   
   #Create a matrix where items should be saved. 
   object_mat <- matrix(0, nrow=2**nrow(x), ncol=32)

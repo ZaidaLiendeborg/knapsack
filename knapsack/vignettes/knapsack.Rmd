@@ -1,0 +1,81 @@
+---
+title: "lab_report_knapsack"
+author: "Emma Wallentinsson & Zaida Liendeborg"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{lab_report_knapsack}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The knapsack package includes three functions that solves the knapsack problem. The functions solves the problem by using brute force, dynamic programming and a greedy heuristic solution. The function arguments is a dataframe containing the items and corresponding value, and the maximum weight. The data frame **knapsack_objects** used in examples is created below: 
+
+```{r}
+library(knapsack)
+set.seed(42)
+n <- 2000
+knapsack_objects <-data.frame(w=sample(1:4000, size = n, replace = TRUE),
+v=runif(n = n, 0, 10000))
+
+```
+
+
+## Brutce force function
+
+The **brute_force_knapsack** function goes through all possible combinations and returns a list containing the maximum value and the corresponding items in the knapsack. 
+
+```{r}
+brute_force_knapsack(x=knapsack_objects[1:8,], W=3500)
+
+```
+
+If we run the function with 16 objects, the time is 0.64 seconds. 
+
+```{r}
+system.time(brute_force_knapsack(x=knapsack_objects[1:16,], W=3500))
+
+```
+
+
+## Dynammic programming
+
+The **knapsack_dynamic** function assumes that the weights are discrete values, and the problem solves by iterationg over all possivble values of the weight W. 
+
+```{r}
+knapsack_dynamic(x=knapsack_objects[1:8,], W=3500)
+```
+
+The time for running the function when the number of objects is 500, is 45 seconds, which is a very long time. (The function is not evaluated here, due to the time) 
+
+```{r, eval=FALSE}
+system.time(knapsack_dynamic(x=knapsack_objects[1:500,], W=3500))
+
+```
+
+
+## Greedy heuristic function
+
+The **greedy_knapsack** function returns a approximation of the problem. It will return at least 50 % of the maximum value. The function returns a list with the highest value and the corresponding elements(items) that fits in the knapsack. 
+
+```{r}
+greedy_knapsack(x=knapsack_objects[1:800,], W=3500)
+
+```
+
+To time the function with 1 000 000 object, we create a new dataframe **knapsack_objects_big** below:
+
+
+```{r}
+n<-1000000
+knapsack_objects_big <-data.frame(w=sample(1:4000, size = n, replace = TRUE),
+v=runif(n = n, 0, 10000))
+
+```
+
+The time it takes to run the function is 1.6 seconds. 
+
+```{r}
+system.time(greedy_knapsack(x=knapsack_objects_big[1:1000000,], W=3500))
+```
+

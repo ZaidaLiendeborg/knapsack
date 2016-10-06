@@ -1,4 +1,14 @@
-
+#' Solving the knapsack problem using dynamic programming
+#' 
+#' The function solves the knapsack problem , \url{https://en.wikipedia.org/wiki/Knapsack_problem}
+#' using dynamtic programming. The function iterates over all possible values of W.
+#' @param x an data frame with a number of items.
+#' @param W the limited weight the knapsack can handle.
+#' @return A list of the maximated value with corresponding elements that fits in the bag.
+#' @examples
+#' knapsack_objects <-data.frame(w=sample(1:4000, size = n, replace = TRUE),v=runif(n = n, 0, 10000))
+#' knapsack_dynamic(x=knapsack_objects[1:500,] W=2000)
+#' @export
  
 knapsack_dynamic<- function(x, W){
   
