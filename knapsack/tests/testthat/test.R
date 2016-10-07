@@ -56,3 +56,19 @@ test_that("Testing knapsack_dymanic",{
   
 }
 )
+
+test_that("Testing knapsack_dymanic is eq brute_force_knapsack",{
+  set.seed(42)
+  n <- 2000
+  knapsack_objects <-data.frame(w=sample(1:4000, size = n, replace = TRUE),
+                                v=runif(n = n, 0, 10000))
+  test1<- knapsack_dynamic(x=knapsack_objects[1:8,],W=3500)
+  test2<- brute_force_knapsack(x=knapsack_objects[1:8,],W=3500)
+  
+  expect_equal(test1$value, test2$value, 
+               info="Error: knapsack_dynamic does not return same value as brute_forece_knapsack.")
+  expect_equal(test1$elements, test2$elements, 
+               info="Error: knapsack_dynamic does not return same value as brute_forece_knapsack.")
+  
+}
+)
