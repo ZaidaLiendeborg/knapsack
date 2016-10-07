@@ -42,9 +42,6 @@ greedy_knapsack<- function(x, W){
       totWeight<- weight[i] + totWeight
       totValue<- value[i] + totValue
     }
-  if (totWeight > W){
-    items<- items[1:(length(items)-1)]
-  }
   }
   ls<- list(value = totValue, elements = items)
   return(ls)
