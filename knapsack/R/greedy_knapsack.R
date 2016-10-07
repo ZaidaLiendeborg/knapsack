@@ -43,7 +43,7 @@ greedy_knapsack<- function(x, W){
       totValue<- value[i] + totValue
     }
   }
-  ls<- list(value = totValue, elements = items)
+  ls<- list(value = round(totValue), elements = items)
   return(ls)
 }
 
